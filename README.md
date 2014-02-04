@@ -46,13 +46,16 @@ Don't ever run this as root, run it as an unprivileged user, and even then, use 
 
 ## Running http-runner
 
-* Clone the source from Github.
-* Run `npm install` from the source directory to install dependencies.
+* Clone the source from Github (or install from npm using `npm install http-runner`).
+* Run `npm install` from the source directory to install dependencies if cloned from Github (not necessary when installed using npm).
 * Run `bin/http-runner`, this will start the server on port 9000.
+
+The CLI supports the following options:
+
+    -p $PORT: run server on specified TCP port (default 9000)
 
 ## TODO
 
 * Add whitelisting capabilities to only allow specific commands.
 * Add `callback` option to send a HTTP notification whenever a job completes or fails.
 * Allow purging of old jobs to prevent memory issues.
-* Add CLI option to allow running on a different port.

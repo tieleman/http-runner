@@ -1,7 +1,7 @@
 {
   "name": "http-runner",
   "description": "A simple HTTP-based remote job runner.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["http", "job"],
   "repository": {
     "type": "git",
