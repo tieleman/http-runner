@@ -10,7 +10,7 @@ API. Basically, you send an HTTP POST with a JSON object containing a `command` 
 
 `stdout` and `stderr` output, the process exit code and any error message will be captured and returned.
 
-This package allows you to execute long-running processes (e.g. transcoding, archival tasks, etc.) asynchronously and (in the future) be notified when a job is done.
+This package allows you to execute long-running processes (e.g. transcoding, archival tasks, etc.) asynchronously and (in the future) be notified when a job is done. Also, it allows you to trigger jobs on separate machines on your network to spread load.
 
 ## API
 
@@ -40,12 +40,19 @@ Responses:
 
 ## Warning
 
-`http-runner` is of course an easy way to have anyone root your system. Don't run this public on the internet. It will kill your dog, eat your dinner, break your porselain collection and sell the nuclear launch codes to evil dictators.
+`http-runner` is of course an easy way to have anyone compromise your system. Don't run this public on the internet. It will kill your dog, eat your dinner, break your porselain collection and sell the nuclear launch codes to evil dictators.
 
-Don't run this as root, run it as an unprivileged user.
+Don't ever run this as root, run it as an unprivileged user, and even then, use extreme caution (don't say I didn't warn you).
+
+## Running http-runner
+
+* Clone the source from Github.
+* Run `npm install` from the source directory to install dependencies.
+* Run `bin/http-runner`, this will start the server on port 9000.
 
 ## TODO
 
 * Add whitelisting capabilities to only allow specific commands.
 * Add `callback` option to send a HTTP notification whenever a job completes or fails.
 * Allow purging of old jobs to prevent memory issues.
+* Add CLI option to allow running on a different port.
