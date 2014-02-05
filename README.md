@@ -10,7 +10,7 @@ API. Basically, you send an HTTP POST with a JSON object containing a `command` 
 
 `stdout` and `stderr` output, the process exit code and any error message will be captured and returned.
 
-This package allows you to execute long-running processes (e.g. transcoding, archival tasks, etc.) asynchronously and (in the future) be notified when a job is done. Also, it allows you to trigger jobs on separate machines on your network to spread load.
+This package allows you to execute long-running processes (e.g. transcoding, archival tasks, etc.) asynchronously and be notified when a job is done. Also, it allows you to trigger jobs on separate machines on your network to spread load.
 
 ## API
 
