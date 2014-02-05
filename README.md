@@ -47,6 +47,8 @@ Responses:
 
 Don't ever run this as root, run it as an unprivileged user, and even then, use extreme caution (don't say I didn't warn you).
 
+If at all possible use a small whitelist (and don't put `sudo` in your whitelist).
+
 ## Running http-runner
 
 * Clone the source from Github (or install from npm using `npm install http-runner`).
