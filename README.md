@@ -21,8 +21,11 @@ Parameters (HTTP POST data, should be valid JSON object):
 
     {
         "command": "curl",
-        "args":"--progress-bar https://raw.github.com/tieleman/http-runner/master/LICENSE"
+        "args":"--progress-bar https://raw.github.com/tieleman/http-runner/master/LICENSE",
+        "callback":"http://my.callback.io:8080/"
     }
+
+`callback` is an optional argument. It is a HTTP endpoint that should be notified when the job completes. The job and any error status will be POSTed to this endpoint. This will silently fail if the callback is not available (i.e. `http-runner` doesn't care whether the other end is available or not).
 
 Responses:
 
@@ -57,5 +60,4 @@ The CLI supports the following options:
 ## TODO
 
 * Add whitelisting capabilities to only allow specific commands.
-* Add `callback` option to send a HTTP notification whenever a job completes or fails.
 * Allow purging of old jobs to prevent memory issues.

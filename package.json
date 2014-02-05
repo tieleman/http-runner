@@ -2,7 +2,7 @@
   "name": "http-runner",
   "description": "A simple HTTP-based remote job runner.",
   "version": "0.0.2",
-  "keywords": ["http", "job"],
+  "keywords": ["http", "job", "rpc"],
   "repository": {
     "type": "git",
     "url": "https://github.com/tieleman/http-runner.git"
