@@ -56,8 +56,28 @@ Don't ever run this as root, run it as an unprivileged user, and even then, use 
 The CLI supports the following options:
 
     -p $PORT: run server on specified TCP port (default 9000)
+    -w $WHITELIST: only allow specific commands (comma-separated, default all commands)
+
+## Examples
+
+Creating a job:
+
+    # curl -XPOST -d'{"command":"echo", "args":"foo"}' http://localhost:9000
+    {"stderr":"","stdout":"","id":"9c2ec44b891317c272c0e20d1e46629a83ebf905","code":null,"command":"echo","arguments":["foo"]}
+
+Getting the status of a job:
+
+    # curl http://localhost:9000/9c2ec44b891317c272c0e20d1e46629a83ebf905
+    {"stderr":"","stdout":"foo\n","id":"9c2ec44b891317c272c0e20d1e46629a83ebf905","code":0,"command":"echo","arguments":["foo"],"err":null}
+
+Note that after the job has completed the exit code has been set (in this case to `0`). Also, if any errors occurred during the spawning of the job (e.g. Node can't spawn for whatever reason) this will be visible in the `err` property.
+
+Starting `http-runner` with CLI options (port 8080, whitelist of two commands: `ffmpeg` and `rake`):
+
+    # http-runner -p 8080 -w /usr/local/bin/ffmpeg,/usr/local/bin/rake
+
+Note that the comma-separated list should not contain spaces (not fully tested) and jobs should match the commands listed here *exactly*.
 
 ## TODO
 
-* Add whitelisting capabilities to only allow specific commands.
 * Allow purging of old jobs to prevent memory issues.
