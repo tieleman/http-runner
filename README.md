@@ -53,11 +53,12 @@ If at all possible use a small whitelist (and don't put `sudo` in your whitelist
 
 * Clone the source from Github (or install from npm using `npm install http-runner`).
 * Run `npm install` from the source directory to install dependencies if cloned from Github (not necessary when installed using npm).
-* Run `bin/http-runner`, this will start the server on port 9000.
+* Run `bin/http-runner`, this will start the server on port 9000, listening on the loopback interface only (so no remote connections can be made unless you explicitly allow it).
 
 The CLI supports the following options:
 
     -p $PORT: run server on specified TCP port (default 9000)
+    -i $INTERFACE: accept connections on the specified interface (default 127.0.0.1)
     -w $WHITELIST: only allow specific commands (comma-separated, default all commands)
 
 ## Examples
