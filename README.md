@@ -60,6 +60,7 @@ The CLI supports the following options:
     -p $PORT: run server on specified TCP port (default 9000)
     -i $INTERFACE: accept connections on the specified interface (default 127.0.0.1)
     -w $WHITELIST: only allow specific commands (comma-separated, default all commands)
+    -n $MAX_JOB_COUNT: maximum number of jobs to keep in memory (default 100)
 
 ## Examples
 
@@ -81,6 +82,4 @@ Starting `http-runner` with CLI options (port 8080, whitelist of two commands: `
 
 Note that the comma-separated list should not contain spaces (not fully tested) and jobs should match the commands listed here *exactly*.
 
-## TODO
-
-* Allow purging of old jobs to prevent memory issues.
+The `-n` option allows specifying the maximum number of jobs to keep in memory. Creating a job after the maximum has been reached will result in the purging of the oldest jobs from memory, to prevent memory overflow issues.
