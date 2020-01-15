@@ -1,3 +1,5 @@
+# NOTE: This project is not maintained anymore
+
 # http-runner
 
 A simple HTTP-based remote job runner using Node.js.
